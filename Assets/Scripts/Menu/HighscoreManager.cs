@@ -12,8 +12,6 @@ public class HighscoreManager : MonoBehaviour
     {
         for (int i = 0; i < players.Length; i++)
         {
-            Debug.Log(players[i].text);
-            Debug.Log(GameManager.Instance.bestTenPlayers[i].playerName);
             players[i].text = GameManager.Instance.bestTenPlayers[i].playerName;
             scores[i].text = "" + GameManager.Instance.bestTenPlayers[i].score;
         }

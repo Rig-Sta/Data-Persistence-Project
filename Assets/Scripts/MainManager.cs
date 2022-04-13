@@ -79,17 +79,11 @@ public class MainManager : MonoBehaviour
     public void GameOver()
     {
         m_GameOver = true;
-        Debug.Log("Dosaženo: " + m_Points + ", poslední v tabulce byl " + GameManager.Instance.bestTenPlayers[0].playerName + " se " + GameManager.Instance.bestTenPlayers[0].score + "body");
 
         if (m_Points > GameManager.Instance.bestTenPlayers[9].score)
         {
-            Debug.Log("Podmínka splnìna");
             GameManager.Instance.bestTenPlayers[9] = new GameManager.Player(GameManager.Instance.playerName, m_Points);
             Array.Sort(GameManager.Instance.bestTenPlayers);
-            for (int i = 0; i < 10; i++)
-            {
-                Debug.Log(GameManager.Instance.bestTenPlayers[i].playerName + " - " + GameManager.Instance.bestTenPlayers[i].score);
-            }
             HighscoreText.text = "Best Score: " + GameManager.Instance.bestTenPlayers[0].playerName + " - " + GameManager.Instance.bestTenPlayers[0].score;
             GameManager.Instance.SaveData();
         }

@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
     public void LoadData()
     {
         string path = Application.persistentDataPath + "/SaveData.json";
-        Debug.Log(path);
 
         if (File.Exists(path))
         {
@@ -65,7 +64,6 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 0; i < 10; i++)
             {
-                Debug.Log(i);
                 Instance.bestTenPlayers[i] = new Player("-", 0);
             }
         }
